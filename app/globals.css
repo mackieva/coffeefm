@@ -3,31 +3,338 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+	--foreground-rgb: 0, 0, 0;
+	--background-start-rgb: 214, 219, 220;
+	--background-end-rgb: 255, 255, 255;
+
+	--green: hsl(179, 81%, 29%);
+	--greenHover: hsl(179, 55%, 61%);
+	--blue: hsl(215, 19%, 25%);
+	--blueAlt: hsl(218, 20%, 25%);
+	--orange: hsl(25, 94%, 86%);
+	--cream: hsl(43, 78%, 98%);
+	--grey: hsl(215, 5%, 54%);
+	--greyAlt: hsla(215, 5%, 54%, 0.615);
+
+	--layout-width: 1280px;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+	:root {
+		--foreground-rgb: 255, 255, 255;
+		--background-start-rgb: 0, 0, 0;
+		--background-end-rgb: 0, 0, 0;
+	}
+}
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
+	}
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	background-color: var(--cream);
+	font-family: var(--font-barlow);
+	font-size: 16px;
+	line-height: 26px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+header {
+	max-width: var(--layout-width);
+	margin: 0 auto;
+	padding: 50px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.textNavLinks {
+	display: flex;
+	justify-content: space-between;
+	gap: 33px;
+	align-items: center;
+}
+
+.textNavLinks a {
+	color: var(--grey);
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	letter-spacing: 0.92px;
+}
+
+.textNavLinks a:hover {
+	color: var(--blue);
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: var(--font-fraunces);
+}
+
+h1 {
+	font-size: 72px;
+	line-height: 72px;
+}
+
+h2 {
+	font-size: 32px;
+	line-height: 36px;
+}
+
+h3 {
+	font-size: 32px;
+	line-height: 36px;
+}
+
+h4 {
+	font-size: 24px;
+	line-height: 32px;
+}
+
+.alternateBig {
+	color: var(--grey);
+	font-size: 150px;
+	line-height: 100%;
+	text-transform: lowercase;
+	background: -webkit-linear-gradient(var(--grey), var(--cream) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	margin-bottom: -55px;
+}
+
+.btn {
+	background: var(--green);
+	padding: 15px 35px;
+	font-family: var(--font-fraunces);
+	color: var(--cream);
+	border-radius: 6px;
+	transition: all 0.3s ease;
+}
+
+.btn:hover {
+	background-color: var(--greenHover);
+}
+
+.btn.disabled {
+	background-color: var(--grey);
+}
+
+/****** HERO BANNERS ********/
+.heroBanner {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	min-height: 600px;
+	padding: 85px 80px;
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+	justify-content: start;
+	align-items: start;
+	border-radius: 10px;
+}
+
+.heroBanner h2 {
+	font-size: 72px;
+	color: #fff;
+	max-width: 12ch;
+	line-height: 72px;
+}
+
+.heroBanner p {
+	color: var(--cream);
+	max-width: 60ch;
+	opacity: 0.8;
+}
+
+/********* HOME COLLECTION SECTION ***********/
+
+.collectionSect {
+	max-width: var(--layout-width);
+	margin: 0 auto;
+	margin: 200px 0;
+	padding: 0 95px;
+}
+
+.collectionSect__list {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.collectionSect__list img {
+	margin: 0 auto 75px;
+}
+
+.collectionSect__list h3 {
+	color: var(--blue);
+	text-align: center;
+	margin-bottom: 24px;
+	font-size: 24px;
+}
+
+.collectionSect__list p {
+	color: var(--blueAlt);
+	text-align: center;
+}
+
+/********** WHY CHOOSE US ************/
+
+.choose {
+	background: var(--blue);
+	max-width: var(--layout-width);
+	margin: 0 auto 200px;
+	padding: 100px 0;
+	border-radius: 10px;
+}
+
+.choose h2 {
+	color: var(--cream);
+	font-size: 40px;
+	line-height: 48px;
+	text-align: center;
+	margin-bottom: 32px;
+}
+
+.choose p {
+	max-width: 540px;
+	margin: 0 auto;
+	color: var(--cream);
+	opacity: 0.8;
+	text-align: center;
+}
+
+.chooseReasons {
+	max-width: 1110px;
+	margin: 80px auto -200px;
+}
+
+.chooseReason {
+	background: var(--green);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 45px;
+	gap: 25px;
+}
+
+.chooseReason img {
+	margin-bottom: 45px;
+}
+
+.chooseReason h3 {
+	margin-top: auto;
+	margin-bottom: 20px;
+	font-size: 24px;
+	line-height: 34px;
+	color: #fff;
+}
+
+/***** HOW IT WORKS ******/
+
+.works {
+	max-width: 1110px;
+	margin: 0 auto 100px;
+}
+
+.works h3 {
+	font-size: 24px;
+	line-height: 32px;
+	color: var(--grey);
+	margin-bottom: 80px;
+}
+
+.workStepContainer {
+	max-width: 1045px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.workStep {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	margin-bottom: 65px;
+	padding-top: 90px;
+	padding-right: 75px;
+	border-top: 2px solid var(--orange);
+}
+
+.workStep::before {
+	position: absolute;
+	top: -15px;
+	left: 0;
+	height: 31px;
+	width: 31px;
+	background: var(--cream);
+	content: '';
+	display: block;
+	border: 3px solid var(--green);
+	border-radius: 100%;
+}
+
+.workStep:last-of-type {
+	border: none;
+}
+
+.workStep .stepNum {
+	font-family: var(--font-fraunces);
+	color: var(--orange);
+	font-size: 72px;
+	line-height: 72px;
+	margin-bottom: 38px;
+}
+
+.workStep .stepLabel {
+	font-family: var(--font-fraunces);
+	color: var(--blue);
+	font-size: 32px;
+	line-height: 36px;
+	margin-bottom: 42px;
+	max-width: 10ch;
+}
+
+main {
+	max-width: var(--layout-width);
+	margin: 0 auto;
+	padding: 0 0 50px;
+}
+
+footer {
+	background-color: var(--blue);
+	max-width: var(--layout-width);
+	margin: 0 auto;
+	padding: 50px 85px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+
+footer .textNavLinks {
+	margin-left: 100px;
+	margin-right: auto;
+	font-weight: bold;
+}
+
+footer .textNavLinks a:hover {
+	color: #fff;
+}
+
+footer .socialLinks {
+	margin-left: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.socialLinks a:hover {
+	filter: invert(100%) sepia(26%) saturate(402%) hue-rotate(349deg)
+		brightness(105%) contrast(97%);
 }
