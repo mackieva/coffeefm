@@ -124,10 +124,9 @@ h4 {
 /****** HERO BANNERS ********/
 .heroBanner {
 	background-size: cover;
-	background-position: center center;
+	background-position: top left;
 	background-repeat: no-repeat;
-	min-height: 600px;
-	padding: 85px 80px;
+	padding: 115px 80px;
 	display: flex;
 	flex-direction: column;
 	gap: 35px;
@@ -298,6 +297,100 @@ h4 {
 	line-height: 36px;
 	margin-bottom: 42px;
 	max-width: 10ch;
+}
+
+/********** COMMITMENT ************/
+
+.commitment {
+	max-width: 1110px;
+	margin: 165px auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 65px;
+}
+
+.commitment img {
+	border-radius: 8px;
+}
+
+.commitmentCopy {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.commitmentCopy h3 {
+	margin-bottom: 32px;
+}
+
+/****** QUALITY *******/
+
+.quality {
+	max-width: 1110px;
+	margin: 165px auto;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 65px;
+	background-color: var(--blue);
+	border-radius: 10px;
+	padding: 80px;
+}
+
+.quality img {
+	border-radius: 8px;
+	margin-top: -165px;
+}
+
+.qualityCopy {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+}
+
+.qualityCopy h3 {
+	margin-bottom: 32px;
+	color: #fff;
+}
+
+.qualityCopy p {
+	color: var(--cream);
+	opacity: 0.8;
+}
+/****** HEADQUARTES *******/
+
+.headquarters {
+	max-width: 1045px;
+	margin: 100px auto;
+}
+
+.headquarters h2 {
+	font-size: 24px;
+	color: var(--grey);
+	margin-bottom: 74px;
+}
+
+.headquarters .headquartersContainer {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 95px;
+}
+
+.headquartersItem img {
+	margin-bottom: 46px;
+}
+
+.headquartersItem h3 {
+	margin-bottom: 24px;
+}
+
+.headquartersItem p {
+	margin: 0;
+}
+
+.blueBg {
+	background-color: var(--blue);
 }
 
 main {

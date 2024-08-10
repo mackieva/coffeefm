@@ -15,9 +15,11 @@ export default function HeroBanner({
 		>
 			<h2>{heading}</h2>
 			<p>{para}</p>
-			<Link href={btnLink} className='btn'>
-				{btnText}
-			</Link>
+			{btnLink && (
+				<Link href={btnLink} className='btn'>
+					{btnText}
+				</Link>
+			)}
 		</section>
 	);
 }

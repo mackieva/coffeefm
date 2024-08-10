@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { works } from '../lib/defs';
 
-export default function HowItWorks() {
+export default function HowItWorks({ btn = true }) {
 	return (
 		<section className='works'>
 			<h3>How it works</h3>
@@ -14,9 +14,11 @@ export default function HowItWorks() {
 					</div>
 				))}
 			</div>
-			<Link href='/create/' className='btn'>
-				Create your plan
-			</Link>
+			{btn && (
+				<Link href='/create/' className='btn'>
+					Create your plan
+				</Link>
+			)}
 		</section>
 	);
 }
