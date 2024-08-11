@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { works } from '../lib/defs';
 
-export default function HowItWorks({ btn = true }) {
+export default function HowItWorks({ btn = true, dark = false }) {
 	return (
-		<section className='works'>
+		<section className={`works ${dark && 'darkmode'}`}>
 			<h3>How it works</h3>
 			<div className='workStepContainer'>
 				{works.map((w) => (

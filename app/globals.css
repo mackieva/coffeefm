@@ -237,8 +237,12 @@ h4 {
 /***** HOW IT WORKS ******/
 
 .works {
-	max-width: 1110px;
+	padding: 85px;
 	margin: 0 auto 100px;
+}
+
+.works.darkmode {
+	background-color: var(--blue);
 }
 
 .works h3 {
@@ -246,6 +250,10 @@ h4 {
 	line-height: 32px;
 	color: var(--grey);
 	margin-bottom: 80px;
+}
+
+.works.darkmode h3 {
+	color: #fff;
 }
 
 .workStepContainer {
@@ -263,6 +271,10 @@ h4 {
 	padding-top: 90px;
 	padding-right: 75px;
 	border-top: 2px solid var(--orange);
+}
+
+.works.darkmode .workStep::before {
+	background: none;
 }
 
 .workStep::before {
@@ -297,6 +309,15 @@ h4 {
 	line-height: 36px;
 	margin-bottom: 42px;
 	max-width: 10ch;
+}
+
+.works.darkmode .stepLabel {
+	color: #fff;
+}
+
+.works.darkmode .description {
+	color: var(--cream);
+	opacity: 0.8;
 }
 
 /********** COMMITMENT ************/
@@ -387,10 +408,6 @@ h4 {
 
 .headquartersItem p {
 	margin: 0;
-}
-
-.blueBg {
-	background-color: var(--blue);
 }
 
 main {
